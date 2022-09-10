@@ -29,6 +29,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+  String _type = "偶数";
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+      if (_counter % 2 == 0) {
+        _type = "偶数";
+      } else {
+        _type = "奇数";
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,12 +74,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 size: 36.0,
               ),
             ],
+          ),
+          Text("$_counter", style: Theme.of(context).textTheme.headline4),
+          Text(
+            "$_type",
+            style: TextStyle(fontSize: 20, color: Colors.red),
           )
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => {print("押した")},
-        child: const Icon(Icons.timer),
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
       ),
       drawer: const Drawer(child: Center(child: Text("Drawer"))),
       endDrawer: const Drawer(child: Center(child: Text("EndDrawer"))),
