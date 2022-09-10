@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -67,6 +68,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.blue,
                 size: 36.0,
               ),
+              Icon(
+                FontAwesomeIcons.gift,
+                color: Colors.teal,
+              )
             ],
           ),
           Text("$_counter", style: Theme.of(context).textTheme.headline4),
