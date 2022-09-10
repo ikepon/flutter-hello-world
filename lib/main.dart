@@ -68,6 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () => {print("押した")},
         child: const Icon(Icons.timer),
       ),
+      drawer: const Drawer(child: Center(child: Text("Drawer"))),
+      endDrawer: const Drawer(child: Center(child: Text("EndDrawer"))),
     );
   }
 }
